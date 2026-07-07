@@ -1,0 +1,13 @@
+###New server in the database (POST)
+POST http://localhost:8080/api/assets
+Content-Type: application/json
+
+{
+  "name" : "Router Principal",
+  "ipOrDomain": "192.168.1.1",
+  "assetType": "NETWORK_ROUTER"
+}
+
+###Read all servers in the database (GET)
+GET http://localhost:8080/api/assets
+
