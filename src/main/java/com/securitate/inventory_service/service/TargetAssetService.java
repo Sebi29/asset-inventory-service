@@ -22,6 +22,10 @@ public class TargetAssetService {
     }
 
     public TargetAsset saveAsset(TargetAsset asset) {
+        if(repository.existsByIpOrDomain(asset.getIpOrDomain())) {
+            throw new IllegalArgumentException("IP or domain "+asset.getIpOrDomain()+ " already exists");
+        }
         return repository.save(asset);
-    }
+        }
 }
+
